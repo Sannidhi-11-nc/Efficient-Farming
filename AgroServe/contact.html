@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+         body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+        }
+        .main {
+            width: 85%; /* Increased width of main content */
+            margin: auto;
+            flex: 1;
+        }
+        .header {
+            background: #27ae60;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 1s;
+
+        }
+        .header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+
+        }
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar items */
+background: #27ae60;
+}
+
+.navbar a {
+    background-color:#27ae60;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px; /* Reduced padding */
+    margin: 0 5px; /* Added margin for spacing */
+    border-radius: 5px; /* Optional: add some rounding to buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    background-color: #2ecc71; /* Change background color on hover */
+}
+
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            
+        }
+
+        .contact-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-image img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+        }
+
+        .contact-info {
+            max-width: 500px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            margin-top: 10px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .contact-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .contact-form button {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: green;
+        }
+.footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #27ae60;
+            color: #ffffff;
+            width: 100%;
+            position: relative;
+            margin-top: auto; /* Ensure footer stays at the bottom */
+        }
+ .footer p {
+            margin: 0;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<body>
+<div class="main">
+    <div class="header">
+        <div class="header_resize">
+            <div class="logo">
+                <h1><b>AgroServe Your Agricultural Partner</b></h1>
+            </div>
+            <div class="navbar">
+                <a href="home.html">Home</a>
+                <a href="equipment.html">Equipment Rental</a>
+                <a href="labor-services.html">Labor Services</a>
+                <a href="crop-insights.html">Crop Insights</a>
+                <a href="marketinsights.html">Market Trading</a>
+<a href="agrotourism.html">Agro Tour</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contact-container">
+        <h1>Thank you for reaching out to us!</h1>
+        <div class="contact-content">
+            <div class="contact-image">
+                <img src="https://tse2.mm.bing.net/th?id=OIG3.tHSFUVn1TXPDLr0KWoHQ&pid=ImgGn" alt="Customer Support Image">
+            </div>
+            <div class="contact-info">
+                <p>We look forward to addressing your query.</p>
+                <p>Have you tried calling us at <b>+91-7400498525</b> or mailing to <b>support@equiphunt.com</b>? If not, kindly fill in the below details and we will be getting in touch with you shortly.</p>
+                <form class="contact-form">
+                    <label for="enquiry-for">Enquiry For:</label><br>
+                    <input type="radio" id="Equipment Rental" name="enquiry" value="Equipment Rental" checked>
+                    <label for="spares">Equipment Rental</label>
+                    <input type="radio" id="rental" name="enquiry" value="labour Services">
+<label for="spares">Labour Services</label>
+                    <input type="radio" id="Crop Insights" name="enquiry" value="Crop Insights">
+<label for="spares">Crop Insights</label>
+                    <input type="radio" id="Crop Insights" name="enquiry" value="Crop Insights">
+
+<label for="spares">Market Trading</label>
+                    <input type="radio" id="Market Trading" name="enquiry" value="Market Trading">
+                   <br><br>
+                    
+                    <label for="name">Your Name*</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    
+                    <label for="location">Location*</label>
+                    <input type="text" id="location" name="location" required><br><br>
+                    
+                    <label for="email">Mail ID*</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    
+                    <label for="contact">Contact Number*</label>
+                    <input type="tel" id="contact" name="contact" required><br><br>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+    <p>&copy; 2024 AgroServe. All Rights Reserved.</p>
+    <p>Follow us on <a href="agro_serve">Facebook</a>, <a href="agro_serve">Twitter</a>, and <a href="agro_serve">Instagram</a>.</p>
+</div>
+
+</body>
+</html>

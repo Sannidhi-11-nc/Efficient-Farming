@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Info Finder</title>
+    <style>
+       body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+        }
+        .main {
+            width: 85%; /* Increased width of main content */
+            margin: auto;
+            flex: 1;
+        }
+        .header {
+            background: #27ae60;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 1s;
+
+        }
+        .header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+
+        }
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar items */
+background: #27ae60;
+}
+
+.navbar a {
+    background-color:#27ae60;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px; /* Reduced padding */
+    margin: 0 5px; /* Added margin for spacing */
+    border-radius: 5px; /* Optional: add some rounding to buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    background-color: #2ecc71; /* Change background color on hover */
+}
+
+
+        h1 {
+            text-align: center;
+            
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2ecc71;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f6e0;
+            border-radius: 5px;
+        }
+
+        .result h3 {
+            margin: 0;
+            padding: 5px 0;
+            color: #27ae60;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+ .image-section img {
+            width: 32%; /* Adjust width to fit three images side by side */
+            border-radius: 5px;
+        }
+
+        .result img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+         footer {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<body>
+<div class="main">
+    <div class="header">
+        <div class="header_resize">
+            <div class="logo">
+                <h1><b>AgroServe Your Agricultural Partner</b></h1>
+            </div>
+            <div class="navbar">
+                <a href="home.html">Home</a>
+                <a href="equipment.html">Equipment Rental</a>
+                <a href="labor-services.html">Labor Services</a>
+                <a href="crop-insights.html">Crop Insights</a>
+                <a href="marketinsights.html">Market Trading</a>
+<a href="agrotourism.html">Agro Tour</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h1>Plant Info Finder</h1>
+ <div class="image-section">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.gorsCo07Dp64HfIW_Pfc0AHaEY&pid=Api&P=0&h=180" alt="Image 1" />
+        <img src="https://tse3.mm.bing.net/th?id=OIP.mxAeE7CInB0_OKPk4fFBKgHaEK&pid=Api&P=0&h=180" alt="Image 2" />
+        <img src="https://tse1.mm.bing.net/th?id=OIP.rqrYQYb4xl0OeUICDmyNwAHaEK&pid=Api&P=0&h=180" alt="Image 3" />
+    </div>
+
+    <div class="container">
+        <input type="text" id="plantInput" placeholder="Enter plant name..." />
+        <button onclick="getPlantInfo()">Get Information</button>
+        <div id="plantResult" class="result"></div>
+    </div>
+
+    <footer>
+        &copy; 2024 AgroServe. All rights reserved.
+    </footer>
+
+    <script>
+        const plantData = {
+                      "tomato": {
+                "fertilizer": "Compost or manure-based fertilizers",
+                "climate": "Warm climate (65°F to 85°F)",
+                "pesticides": "Neem oil or insecticidal soap"
+            },
+            "corn": {
+                "fertilizer": "Nitrogen-rich fertilizers",
+                "climate": "Moderate to warm climate (60°F to 80°F)",
+                "pesticides": "Bt corn or natural predators"
+            },
+            "wheat": {
+                "fertilizer": "Phosphorus and nitrogen fertilizers",
+                "climate": "Cool climate (50°F to 75°F)",
+                "pesticides": "Chlorpyrifos or Carbaryl"
+            },
+            "rice": {
+                "fertilizer": "Potassium and nitrogen fertilizers",
+                "climate": "Hot and humid climate (75°F to 90°F)",
+                "pesticides": "Fungicides or neem oil"
+            },
+            "potato": {
+                "fertilizer": "Balanced NPK fertilizers",
+                "climate": "Cool climate (60°F to 70°F)",
+                "pesticides": "Spinosad or sulfur"
+            },
+            "carrot": {
+                "fertilizer": "Potassium-rich fertilizers",
+                "climate": "Cool to moderate climate (55°F to 75°F)",
+                "pesticides": "Neem oil or pyrethrin"
+            },
+            "onion": {
+                "fertilizer": "Nitrogen and phosphorus-rich fertilizers",
+                "climate": "Cool climate (55°F to 75°F)",
+                "pesticides": "Copper fungicide or neem oil"
+            },
+            "pepper": {
+                "fertilizer": "Phosphorus-rich fertilizers",
+                "climate": "Warm climate (70°F to 85°F)",
+                "pesticides": "Spinosad or insecticidal soap"
+            },
+            "cucumber": {
+                "fertilizer": "Balanced NPK fertilizers",
+                "climate": "Warm climate (65°F to 85°F)",
+                "pesticides": "Pyrethrin or neem oil"
+            },
+            "lettuce": {
+                "fertilizer": "Nitrogen-rich fertilizers",
+                "climate": "Cool climate (60°F to 70°F)",
+                "pesticides": "Bacillus thuringiensis or neem oil"
+            },
+            "strawberry": {
+                "fertilizer": "Phosphorus-rich fertilizers",
+                "climate": "Cool climate (60°F to 70°F)",
+                "pesticides": "Spinosad or neem oil"
+            },
+            "grapes": {
+                "fertilizer": "Potassium-rich fertilizers",
+                "climate": "Warm to hot climate (65°F to 90°F)",
+                "pesticides": "Sulfur or copper fungicide"
+            },
+            "banana": {
+                "fertilizer": "Nitrogen and potassium-rich fertilizers",
+                "climate": "Warm to hot climate (75°F to 95°F)",
+                "pesticides": "Chlorpyrifos or neem oil"
+            },
+            "orange": {
+                "fertilizer": "Nitrogen-rich fertilizers",
+                "climate": "Warm climate (70°F to 85°F)",
+                "pesticides": "Pyrethrin or neem oil"
+            },
+            "mango": {
+                "fertilizer": "Balanced NPK fertilizers",
+                "climate": "Hot climate (75°F to 95°F)",
+                "pesticides": "Neem oil or sulfur"
+            },
+            "pineapple": {
+                "fertilizer": "Nitrogen and potassium-rich fertilizers",
+                "climate": "Hot climate (75°F to 95°F)",
+                "pesticides": "Spinosad or neem oil"
+            },
+            "cabbage": {
+                "fertilizer": "Phosphorus and potassium-rich fertilizers",
+                "climate": "Cool climate (55°F to 70°F)",
+                "pesticides": "Neem oil or Bacillus thuringiensis"
+            },
+            "spinach": {
+                "fertilizer": "Nitrogen-rich fertilizers",
+                "climate": "Cool climate (50°F to 65°F)",
+                "pesticides": "Neem oil or pyrethrin"
+            },
+            "peas": {
+                "fertilizer": "Phosphorus-rich fertilizers",
+                "climate": "Cool climate (55°F to 70°F)",
+                "pesticides": "Bt or spinosad"
+            },
+            "beans": {
+                "fertilizer": "Balanced NPK fertilizers",
+                "climate": "Warm climate (65°F to 85°F)",
+                "pesticides": "Neem oil or pyrethrin"
+            },
+            "soybean": {
+                "fertilizer": "Nitrogen and phosphorus-rich fertilizers",
+                "climate": "Warm climate (70°F to 85°F)",
+                "pesticides": "Spinosad or neem oil"
+            },
+            "barley": {
+                "fertilizer": "Nitrogen and potassium-rich fertilizers",
+                "climate": "Cool climate (55°F to 75°F)",
+                "pesticides": "Bt or copper fungicide"
+            },
+            "sugarcane": {
+                "fertilizer": "Nitrogen and potassium-rich fertilizers",
+                "climate": "Hot and humid climate (75°F to 95°F)",
+                "pesticides": "Chlorpyrifos or neem oil"
+            },
+            "cotton": {
+                "fertilizer": "Nitrogen and phosphorus-rich fertilizers",
+                "climate": "Warm to hot climate (70°F to 90°F)",
+                "pesticides": "Pyrethrin or Bt"
+            },
+            "alfalfa": {
+                "fertilizer": "Phosphorus-rich fertilizers",
+                "climate": "Moderate to warm climate (60°F to 85°F)",
+                "pesticides": "Neem oil or pyrethrin"
+            },
+            "cassava": {
+                "fertilizer": "Potassium-rich fertilizers",
+                "climate": "Tropical climate (75°F to 95°F)",
+                "pesticides": "Bt or spinosad"
+            },
+            "sorghum": {
+                "fertilizer": "Nitrogen-rich fertilizers",
+                "climate": "Warm climate (70°F to 90°F)",
+                "pesticides": "Bt or neem oil"
+            },
+            "millet": {
+                "fertilizer": "Phosphorus-rich fertilizers",
+                "climate": "Warm climate (65°F to 85°F)",
+                "pesticides": "Spinosad or sulfur"
+            }
+        };
+        function getPlantInfo() {
+            const plantName = document.getElementById("plantInput").value.toLowerCase();
+            const resultDiv = document.getElementById("plantResult");
+            resultDiv.innerHTML = ""; // Clear previous results
+
+            if (plantData[plantName]) {
+                const { fertilizer, climate, pesticides, image } = plantData[plantName];
+                resultDiv.innerHTML = `
+                    <h3>${plantName.charAt(0).toUpperCase() + plantName.slice(1)} Information</h3>
+                    <p><strong>Recommended Fertilizer:</strong> ${fertilizer}</p>
+                    <p><strong>Climate:</strong> ${climate}</p>
+                    <p><strong>Pesticides:</strong> ${pesticides}</p>
+                    
+                `;
+            } else {
+                resultDiv.innerHTML = "<p>Plant not found. Please try another name.</p>";
+            }
+        }
+    </script>
+</body>
+</html>

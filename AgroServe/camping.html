@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Registration - AgroTour</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        .card h2 {
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+        .text-center a {
+            color: #007bff;
+        }
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h2>Register for Camping Event</h2>
+            <form id="campingRegisterForm" method="POST" action="javascript:void(0);">
+                <!-- Full Name input -->
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required placeholder="Enter your full name">
+                </div>
+
+                <!-- Email input -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+                </div>
+
+                <!-- Date of Birth input -->
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+
+                <!-- Phone Number input -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+
+                <!-- Select Camping Event -->
+                <div class="form-group">
+                    <label for="campingEvent">Select Camping Event</label>
+                    <select class="form-control" id="campingEvent" name="campingEvent" required>
+                        <option value="">Select an Event</option>
+                        <option value="Mountain Adventure">Mountain Adventure</option>
+                        <option value="Forest Retreat">Forest Retreat</option>
+                        <option value="Beachside Camp">Beachside Camp</option>
+                        <option value="Desert Safari">Desert Safari</option>
+                    </select>
+                </div>
+
+                <!-- Register button -->
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <p>Want to learn more about AgroTour? <a href="home.html">Go to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 AgroServe. All rights reserved.</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for form handling -->
+    <script>
+        document.getElementById('campingRegisterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var dob = document.getElementById('dob').value;
+            var phone = document.getElementById('phone').value;
+            var campingEvent = document.getElementById('campingEvent').value;
+
+            // Display confirmation
+            alert("Registration successful!\n\n" + 
+                "Name: " + fullName + "\n" +
+                "Email: " + email + "\n" +
+                "Date of Birth: " + dob + "\n" +
+                "Phone: " + phone + "\n" +
+                "Camping Event: " + campingEvent);
+
+            // Redirect to a confirmation page or back to the camping page
+            window.location.href = "camping-confirmation.html"; // Redirect to a confirmation page
+        });
+    </script>
+
+</body>
+</html>

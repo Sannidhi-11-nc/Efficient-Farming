@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AgroServe - Labor Services</title>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" type="text/css" />
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+        }
+        .header-content {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            margin: 0;
+        }
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #45a049;
+        }
+        nav a.active {
+            background-color: #ffffff; 
+            color: #4CAF50;
+            font-weight: 500;
+        }
+
+        .main-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-top: 20px;
+        }
+        .content-section {
+            padding: 20px 0;
+        }
+        .content-wrapper {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .main-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content h2 {
+            margin-top: 0;
+        }
+        .main-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .labor-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .labor-option {
+            width: 45%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .labor-option img {
+            width: 60%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .labor-option h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .labor-option p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .labor-option .price {
+            font-weight: bold;
+            color: #4CAF50;
+            font-size: 1.5rem;
+        }
+        .rm {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .rm:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Styles for the booking form */
+        .booking-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .booking-summary {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        .booking-summary p {
+            margin: 5px 0;
+        }
+        .booking-summary .total-amount {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .booking-confirmation {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0ffe0;
+            color: #333;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1><a href="index.html">Agro<span>Serve</span> <small>Your Agricultural Partner</small></a></h1>
+            </div>
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="equipment.html">Equipment Rental</a>
+                <a href="laborservices.html" class="active">Labor Services</a>
+                <a href="crop-insights.html">Crop Insights</a>
+                <a href="marketinsights.html">Market Trading</a>
+<a href="agrotourism.html">Agro Tour</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Heading for Labor Services -->
+    <h1 class="main-heading">Hire Labors</h1>
+
+    <div class="content-section">
+        <div class="content-wrapper">
+            <div class="main-content">
+                <h2>Labor Hiring Options</h2>
+                <p>At AgroServe, we offer both male and female laborers to assist with your agricultural needs. Below are the details and pricing for each option:</p>
+
+                <div class="labor-options">
+                    <!-- Male Labor Option -->
+                    <div class="labor-option">
+                        <img src="https://wallpaperaccess.com/full/2408569.jpg" alt="Male Laborers">
+                        <h3>Male Laborers</h3>
+                        <p>Skilled male workers available to help with various farming tasks.</p>
+                        <p class="price">Price: ₹500/day</p>
+                        <input type="number" id="male-labor" placeholder="Enter number of male laborers" min="0" oninput="calculateTotal()" />
+                    </div>
+
+                    <!-- Female Labor Option -->
+                    <div class="labor-option">
+                        <img src="https://blog.resourcewatch.org/wp-content/uploads/2019/05/8184576966_cd9cec8b56_k.jpg" alt="Female Laborers">
+                        <h3>Female Laborers</h3>
+                        <p>Skilled female workers available for crop harvesting and other tasks.</p>
+                        <p class="price">Price: ₹300/day</p>
+                        <input type="number" id="female-labor" placeholder="Enter number of female laborers" min="0" oninput="calculateTotal()" />
+                    </div>
+                </div>
+
+                <!-- Booking Summary Section -->
+                <div class="booking-section">
+                    <h3>Booking Summary</h3>
+                    <div class="booking-summary">
+                        <p id="male-summary">Male Laborers: 0</p>
+                        <p id="female-summary">Female Laborers: 0</p>
+                        <p>Total Amount: <span id="total-amount">₹0</span></p>
+                    </div>
+
+                    <!-- Book Button -->
+                    <button onclick="bookLabor()" class="rm">Book</button>
+
+                    <!-- Booking Confirmation Message -->
+                    <div class="booking-confirmation" id="confirmation-message">
+                        <p>Thank you! Your laborers have been successfully booked.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 AgroServe. All Rights Reserved.</p>
+    </footer>
+</div>
+
+<script>
+    function calculateTotal() {
+    // Get the number of male and female laborers
+    const maleLabor = parseInt(document.getElementById('male-labor').value) || 0;
+    const femaleLabor = parseInt(document.getElementById('female-labor').value) || 0;
+
+    // Prices for labor
+    const maleLaborPrice = 500;
+    const femaleLaborPrice = 300;
+
+    // Calculate total amount
+    const totalAmount = (maleLabor * maleLaborPrice) + (femaleLabor * femaleLaborPrice);
+
+    // Update summary section
+    document.getElementById('male-summary').innerText = `Male Laborers: ${maleLabor}`;
+    document.getElementById('female-summary').innerText = `Female Laborers: ${femaleLabor}`;
+    document.getElementById('total-amount').innerText = `₹${totalAmount}`;
+}
+
+function bookLabor() {
+    // Show booking confirmation message
+    document.getElementById('confirmation-message').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

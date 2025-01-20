@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroServe - Farm Tours</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #27ae60;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #27ae60;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #2ecc71;
+        }
+
+        .content {
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #27ae60;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 280px;
+            height: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .tour-details, .tour-benefits {
+            margin: 20px 0;
+        }
+
+        .tour-details p, .tour-benefits p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-buttons button {
+            padding: 12px 24px;
+            font-size: 1em;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-tour-btn {
+            background-color: #27ae60;
+        }
+
+        .contact-btn {
+            background-color: #2980b9;
+        }
+
+        .book-tour-btn:hover {
+            background-color: #2ecc71;
+        }
+
+        .contact-btn:hover {
+            background-color: #3498db;
+        }
+
+        .footer {
+            background-color: #27ae60;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>AgroServe - Farm Tours</h1>
+</div>
+
+<div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="equipment.html">Equipment Rental</a>
+    <a href="labor-services.html">Labor Services</a>
+    <a href="crop-insights.html">Crop Insights</a>
+    <a href="marketinsights.html">Market Trading</a>
+    <a href="agrotourism.html">Agrotourism</a>
+    <a href="contact.html">Contact Us</a>
+</div>
+
+<div class="content">
+    <h2>Discover Our Farm Tours</h2>
+    
+    <div class="gallery">
+        <img src="https://tse4.mm.bing.net/th?id=OIP._BtJoAzZTnUGDuTtbrrKxAHaD8&pid=Api&P=0&h=180" alt="Farm Landscape">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.LEYA9psLDM5aN79oTQSb-QAAAA&pid=Api&P=0&h=180" alt="Fruit Picking">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.U4SfgTQHkZFjHhZWYyLUsgHaEn&pid=Api&P=0&h=180" alt="Camping">
+    </div>
+
+    <div class="tour-details">
+        <h3>What to Expect</h3>
+        <p>Our farm tours offer a unique opportunity to immerse yourself in the world of agriculture. Guests can experience the everyday life of farmers, learn about sustainable practices, participate in fruit picking, visit vegetable fields, and observe animal care. This interactive tour is perfect for families, students, or anyone interested in learning more about where their food comes from.</p>
+    </div>
+
+    <div class="tour-benefits">
+        <h3>Benefits of Joining a Farm Tour</h3>
+        <p>Farm tours provide educational experiences that promote awareness and understanding of sustainable agriculture. They also offer a refreshing break from city life, allowing visitors to reconnect with nature. By joining a tour, you contribute to local farms and support rural communities.</p>
+    </div>
+
+    <!-- Contact and Book Tour Buttons -->
+<div class="contact-buttons">
+    <button class="book-tour-btn" onclick="redirectToBooking()">Book a Tour</button>
+    <button class="contact-btn" onclick="redirectToContact()">Contact Us</button>
+</div>
+
+<script>
+    function redirectToBooking() {
+        alert('Redirecting to booking page...');
+        window.location.href = 'book.html'; // Redirects to book.html
+    }
+
+    function redirectToContact() {
+        alert('Redirecting to contact page...');
+        window.location.href = 'contact.html'; // Redirects to contact.html
+    }
+</script>
+
+
+<div class="footer">
+    <p>&copy; 2024 AgroServe - Your Agricultural Partner</p>
+</div>
+
+</body>
+</html>

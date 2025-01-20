@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroServe Login</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Inline CSS for additional styling -->
+    <style>
+        /* Full page layout and center alignment */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Card styling for the login box */
+        .card {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Header styling */
+        .card h2 {
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Styling for form labels */
+        .form-group label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+            font-weight: bold;
+        }
+
+        /* Button hover effect */
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        /* Sign-up link styling */
+        .text-center a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+
+        /* Error message styling */
+        .alert {
+            font-size: 0.9rem;
+            padding: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="card">
+            <h2>Login to AgroServe</h2>
+            <form id="loginForm" method="POST" action="login.php">
+                
+                <!-- Error message section -->
+                <div id="errorMessage" class="alert alert-danger" style="display: none;">
+                    Invalid email or password. Please try again.
+                </div>
+                
+                <!-- Email input -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Enter email">
+                </div>
+                
+                <!-- Password input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+                </div>
+                
+                <!-- Login button -->
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                
+                <!-- Sign-up link -->
+                <p class="text-center mt-3">
+                    Don't have an account? <a href="signup.html">Sign up here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Optional JavaScript for Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for form handling -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Basic email validation
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email.");
+                return;
+            }
+
+            // Basic password validation (minimum 8 characters, at least one number and one letter)
+            var passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!passwordPattern.test(password)) {
+                alert("Password must be at least 8 characters long and contain both letters and numbers.");
+                return;
+            }
+
+            // Submit the form
+            this.submit();
+window.location.href = 'login.html';
+
+        });
+    </script>
+</body>
+</html>

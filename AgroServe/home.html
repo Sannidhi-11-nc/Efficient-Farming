@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AgroServe - An Integrated Platform for Agriculture</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" type="text/css" />
+
+    <!-- Full Page CSS Styling -->
+    <style>
+     body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+        }
+        .main {
+            width: 85%; /* Increased width of main content */
+            margin: auto;
+            flex: 1;
+        }
+        .header {
+            background: #27ae60;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 1s;
+
+        }
+        .header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+
+        }
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar items */
+background: #27ae60;
+}
+
+.navbar a {
+    background-color:#27ae60;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px; /* Reduced padding */
+    margin: 0 5px; /* Added margin for spacing */
+    border-radius: 5px; /* Optional: add some rounding to buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    background-color: #2ecc71; /* Change background color on hover */
+}
+.navbar a:hover, .navbar button:hover {
+            background-color: #2ecc71;
+        }
+
+
+        /* Slider Styling */
+        .slider-container {
+            position: relative;
+            max-width: 960px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider img {
+            width: 960px;
+            height: 360px;
+            border-radius: 10px;
+            flex: 0 0 960px; /* Ensure each image takes full width */
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Content Area */
+        .content_resize {
+            width: 85%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
+            font-size: 24px;
+            color: #32cd32;
+            margin-bottom: 15px;
+        }
+
+        .infopost {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .article img {
+            float: left;
+            margin-right: 20px;
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .article img:hover {
+            transform: scale(1.05);
+        }
+
+        .pages {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pages span, .pages a {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #2980b9;
+            color: white;
+            margin: 0 5px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .pages a:hover {
+            background-color: #27ae60;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            float: right;
+            width: 280px; 
+color:light blue;
+background-color:#27ae60;
+        }
+
+        .gadget {
+            margin-bottom: 20px;
+        }
+
+        .gadget h2 {
+            background-color: lavender;
+            color: green;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .sb_menu li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+
+        .sb_menu li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        .sb_menu li a:hover {
+            color: #1abc9c;
+        }
+
+.offer-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .offer-section h2 {
+            font-size: 36px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        .offer-section .offers {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .offer {
+            width: 220px;
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .offer img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        .offer h3 {
+            font-size: 22px;
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        .offer p {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .offer:hover {
+            transform: scale(1.05);
+        }
+ .content_resize {
+            width: 85%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        /* Footer */
+        .fbg {
+            background-color:#27ae60;
+            padding: 20px 0;
+            color: white;
+        }
+
+        .fbg_resize {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .fbg .col {
+            float: left;
+            width: 30%;
+            margin-right: 5%;
+        }
+
+        .fbg .col h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            background-color: #27ae60;
+            padding: 15px 0;
+            color: white;
+        }
+
+        .footer_resize {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .clr {
+            clear: both;
+        }
+
+        /* Center Video */
+        video {
+            display: block;
+            margin: 0 auto;
+width:85%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <div class="header_resize">
+            <div class="logo">
+                <h1>AgroServe Your Agricultural Partner</h1>
+            </div>
+            <div class="navbar">
+                <a href="home.html">Home</a>
+                <a href="equipment.html">Equipment Rental</a>
+                <a href="labor-services.html">Labor Services</a>
+                <a href="crop-insights.html">Crop Insights</a>
+                <a href="marketinsights.html">Market Trading</a>
+                <a href="agrotourism.html">Agro Tour</a>
+
+
+                <a href="contact.html">Contact Us</a> 
+                <a href="login.html" class="login-btn">Login</a>
+    
+</div>
+        </div>
+    </div>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Video Section -->
+    <video width="960" height="540" autoplay muted loop>
+        <source src="https://videos.pexels.com/video-files/2758322/2758322-uhd_2560_1440_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+ <!-- What We Offer Section -->
+    <div class="offer-section">
+        <h2>What We Offer</h2>
+        <div class="offers">
+            <div class="offer">
+                <img src="https://cdn-icons-png.flaticon.com/128/2548/2548758.png" alt="Equipment Rental Icon">
+                <h3>Equipment Rental</h3>
+                <p>Access a wide range of agricultural equipment for rent at competitive rates.</p>
+            </div>
+            <div class="offer">
+                <img src="https://cdn-icons-png.flaticon.com/128/11445/11445256.png" alt="Labor Services Icon">
+                <h3>Labor Services</h3>
+                <p>Hire skilled labor for your farming tasks with ease and efficiency.</p>
+            </div>
+            <div class="offer">
+                <img src="https://cdn-icons-png.flaticon.com/128/3944/3944289.png" alt="Crop Insights Icon">
+                <h3>Crop Insights</h3>
+                <p>Get data-driven insights to optimize your crop yield and quality.</p>
+            </div>
+            <div class="offer">
+                <img src="https://cdn-icons-png.flaticon.com/128/6516/6516126.png" alt="Market Trading Icon">
+                <h3>Market Trading</h3>
+                <p>Connect with buyers and sellers in the agriculture market for trading.</p>
+            </div>
+        </div>
+    </div>
+<!-- AI chatbot link -->
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/12/01/06/20241201063820-NKK7HVFR.js"></script>
+    <!-- Content Section -->
+    <div class="content">
+        <div class="content_resize">
+            <div class="mainbar">
+                <div class="article">
+                    <h2><span>A Complete Platform</span> for Agriculture</h2>
+                    <p class="infopost">Posted on <span class="date">11 Sep 2024</span> by Admin</p>
+                    <div class="img"><img src="https://i.redd.it/7qzcafry4zg01.jpg" alt="Farming Equipment" /></div>
+                    <div class="post_content">
+                        <p>AgroServe provides farmers with access to essential agricultural services such as equipment rental, labor management, crop insights, and market trading. Our platform is designed to enhance productivity and support sustainable farming practices.</p>
+                        <ul>
+                            <li>Rent and book agricultural equipment from trusted vendors.</li>
+                            <li>Hire labor services for farming activities.</li>
+                            <li>Get detailed crop insights to optimize your farming practices.</li>
+                            <li>Trade crops and connect with buyers through a secure marketplace.</li>
+                        </ul>
+                        <p><a href="about.html" class="rm">Read more</a></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="article">
+                    <h2><span>Efficient Farming</span> Solutions</h2>
+                    <p class="infopost">Posted on <span class="date">10 Sep 2024</span> by Admin</p>
+                    <div class="img"><img src="https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1260" alt="Crop Insights" /></div>
+                    <div class="post_content">
+                        <p>Our innovative solutions provide farmers with the tools needed to maximize crop yield and minimize waste. We utilize modern technology to support smart farming practices that lead to sustainable growth.</p>
+                        <p><a href="about.html" class="rm">Read more</a></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+                <div class="article">
+                    <h2><span>Join Us</span> Today!</h2>
+                    <p class="infopost">Posted on <span class="date">09 Sep 2024</span> by Admin</p>
+                    <div class="img"><img src="https://img.freepik.com/premium-photo/spring-grain-concept-agriculture-healthy-eating-organic-food-generative-ai_58409-32489.jpg" alt="Join AgroServe" /></div>
+                    <div class="post_content">
+                        <p>Sign up now to access all the services AgroServe has to offer. Experience the convenience of modern agriculture and become part of our community.</p>
+                        <p><a href="about.html" class="rm">Read more</a></p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="gadget">
+                    <h2>Latest Updates</h2>
+                    <ul class="sb_menu">
+                        <li><a href="equipment.html">New Equipment Added</a></li>
+                        <li><a href="labour-services.html">Labor Services Now Available</a></li>
+                        <li><a href="crop-insights.html">Crop Insights Updated</a></li>
+                        <li><a href="marketinsights.html">Market Trading Launch</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+<div class="content">
+    <div class="content_resize">
+        <div class="mainbar">
+            <div class="article">
+                <h2><span>AgroServe Platform</span> for Agriculture</h2>
+                <p class="infopost">Posted on <span class="date">11 Sep 2024</span> by Admin</p>
+                <div class="img">
+                    <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Farming Equipment" />
+                </div>
+                <div class="post_content">
+                    <p>AgroServe empowers farmers by offering a range of critical agricultural services, including equipment rentals, workforce solutions, crop advisory, and trading opportunities.</p>
+                    <ul>
+                        <li>Easily rent and reserve agricultural machinery from reputable suppliers.</li>
+                        <li>Secure experienced labor for various farming operations with a hassle-free process.</li>
+                        <li>Access in-depth insights on crop management to enhance your farming techniques and boost yields.</li>
+                        <li>Engage in safe and efficient crop trading by connecting directly with buyers and sellers in the agricultural marketplace.</li>
+                    </ul>
+
+                </div>
+                <div class="clr"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer_resize">
+            <p>&copy; 2024 AgroServe. All Rights Reserved | Design by YourName</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

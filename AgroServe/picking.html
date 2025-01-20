@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Picking - AgroServe</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+        }
+        .card h2 {
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border: none;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+        .fruit-selection {
+            margin-bottom: 20px;
+        }
+        .text-center a {
+            color: #007bff;
+        }
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h2>Fruit Picking Service</h2>
+
+            <!-- Fruit Selection Section -->
+            <div class="fruit-selection">
+                <h4>Select Fruit Type</h4>
+                <select class="form-control" id="fruitType" required>
+                    <option value="">--Select Fruit--</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Mango">Mango</option>
+                    <option value="Orange">Orange</option>
+                    <option value="Banana">Banana</option>
+                    <option value="Grapes">Grapes</option>
+                </select>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="pickingForm">
+                <div class="form-group">
+                    <label for="pickDate">Pick Date</label>
+                    <input type="date" class="form-control" id="pickDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pickTime">Pick Time</label>
+                    <input type="time" class="form-control" id="pickTime" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Book Picking Session</button>
+            </form>
+
+            <p class="text-center mt-3">
+                Want to browse other services? <a href="home.html">Go to Home</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 AgroServe. All rights reserved.</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+        document.getElementById('pickingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var fruitType = document.getElementById('fruitType').value;
+            var pickDate = document.getElementById('pickDate').value;
+            var pickTime = document.getElementById('pickTime').value;
+
+            // Basic validation
+            if (!fruitType || !pickDate || !pickTime) {
+                alert('Please fill in all the fields.');
+                return;
+            }
+
+            // Simulating a booking success message
+            alert('Your fruit picking session has been booked successfully!\nFruit: ' + fruitType + '\nDate: ' + pickDate + '\nTime: ' + pickTime);
+
+            // Redirect to a confirmation page (optional)
+            window.location.href = "home.html"; // Redirect to home page after booking
+        });
+    </script>
+
+</body>
+</html>

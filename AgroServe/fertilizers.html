@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AgroServe - Buy Fertilizers</title>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+        }
+        .header-content {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            margin: 0;
+        }
+        .logo h1 a {
+            color: white;
+            text-decoration: none;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #45a049;
+        }
+        .main-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-top: 20px;
+        }
+        .content-section {
+            padding: 20px 0;
+        }
+        .content-wrapper {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .fertilizer-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+            justify-content: space-between; /* Distribute space between children */
+        }
+        .fertilizer-item img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .fertilizer-details {
+            flex-grow: 1;
+        }
+        .fertilizer-details h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .fertilizer-details p {
+            margin: 5px 0;
+        }
+        .price {
+            font-size: 1.2rem;
+            color: #4CAF50;
+        }
+        .buy-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        /* Styling for the order summary section */
+        .order-summary {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .order-summary h2 {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .order-summary ul {
+            list-style: none;
+            padding: 0;
+        }
+        .order-summary ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .order-summary ul li span {
+            font-weight: bold;
+        }
+        .remove-button {
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart-items {
+            margin-top: 20px;
+        }
+        .cart-items h3 {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .cart-items ul {
+            list-style: none;
+            padding: 0;
+        }
+        /* Flexbox container for quantity controls and add to cart button */
+        .controls-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between quantity controls and button */
+        }
+        .controls-container div {
+            display: flex;
+            align-items: center; /* Center align the buttons and input */
+        }
+        .controls-container input {
+            width: 40px; /* Set fixed width for quantity input */
+            text-align: center; /* Center align the text in the input */
+            margin: 0 10px; /* Add margin for spacing */
+        }
+        /* New styling for combined order summary and cart items */
+        .summary-cart-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Content Section -->
+    <div class="content-section">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="index.html">Agro<span>Serve</span> <small>Your Agricultural Partner</small></a></h1>
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="equipment.html">Equipment Rental</a>
+                    <a href="labor-services.html">Labor Services</a>
+                    <a href="crop-insights.html">Crop Insights</a>
+                    <a href="marketinsights.html">Market Trading</a>
+<a href="agrotourism.html">Agro Tour</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Heading -->
+        <h1 class="main-heading">Buy Fertilizers</h1>
+
+        <div class="content-wrapper">
+            <!-- Fertilizer Item 1 -->
+            <div class="fertilizer-item">
+                <img src="https://m.media-amazon.com/images/I/71iPA5LfB7L._SL1500_.jpg" alt="Fertilizer 1">
+                <div class="fertilizer-details">
+                    <h3>Organic Compost Fertilizer</h3>
+                    <p>Improve soil fertility with this all-natural compost.</p>
+                    <p class="price">₹2,000 per bag</p>
+                    <div class="controls-container">
+                        <div>
+                            <button onclick="changeQuantity('quantity1', -1)">-</button>
+                            <input type="number" id="quantity1" name="quantity1" value="1" min="1" readonly>
+                            <button onclick="changeQuantity('quantity1', 1)">+</button>
+                        </div>
+                        <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Organic Compost Fertilizer', 2000, 'quantity1')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fertilizer Item 2 -->
+            <div class="fertilizer-item">
+                <img src="https://i.ebayimg.com/images/g/arUAAOSw6YtZWYHg/s-l400.jpg" alt="Fertilizer 2">
+                <div class="fertilizer-details">
+                    <h3>Nitrogen-Rich Urea Fertilizer</h3>
+                    <p>Boost crop yield with this nitrogen-rich fertilizer.</p>
+                    <p class="price">₹3,200 per bag</p>
+                    <div class="controls-container">
+                        <div>
+                            <button onclick="changeQuantity('quantity2', -1)">-</button>
+                            <input type="number" id="quantity2" name="quantity2" value="1" min="1" readonly>
+                            <button onclick="changeQuantity('quantity2', 1)">+</button>
+                        </div>
+                        <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Nitrogen-Rich Urea Fertilizer', 3200, 'quantity2')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fertilizer Item 3 -->
+            <div class="fertilizer-item">
+                <img src="https://m.media-amazon.com/images/I/51G170BoLWL.jpg" alt="Fertilizer 3">
+                <div class="fertilizer-details">
+                    <h3>Phosphate Fertilizer</h3>
+                    <p>Enhance root development with high-quality phosphate fertilizer.</p>
+                    <p class="price">₹2,800 per bag</p>
+                    <div class="controls-container">
+                        <div>
+                            <button onclick="changeQuantity('quantity3', -1)">-</button>
+                            <input type="number" id="quantity3" name="quantity3" value="1" min="1" readonly>
+                            <button onclick="changeQuantity('quantity3', 1)">+</button>
+                        </div>
+                        <a href="javascript:void(0)" class="buy-button" onclick="addToCart('Phosphate Fertilizer', 2800, 'quantity3')">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combined Cart Items and Order Summary Section -->
+        <div class="summary-cart-container">
+            <div class="cart-items" id="cartItemsSection">
+                <h3>Items in Cart:</h3>
+                <ul id="cartItemsList"></ul>
+            </div>
+
+            <!-- Order Summary Section -->
+            <div class="order-summary" id="orderSummary">
+                <h2>Order Summary</h2>
+                <ul id="orderList"></ul>
+                <p class="total-price" id="totalPrice">Total Price: ₹0</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 AgroServe. All Rights Reserved.</p>
+</footer>
+
+<script>
+    let cart = [];
+
+    function addToCart(name, price, quantityId) {
+        var quantity = document.getElementById(quantityId).value;
+        var total = price * quantity;
+
+        // Check if the item is already in the cart
+        var existingItemIndex = cart.findIndex(item => item.name === name);
+
+        if (existingItemIndex !== -1) {
+            // If the item is already in the cart, update the quantity and total
+            cart[existingItemIndex].quantity = parseInt(cart[existingItemIndex].quantity) + parseInt(quantity);
+            cart[existingItemIndex].total += total;
+        } else {
+            // Add to cart array
+            cart.push({
+                name: name,
+                quantity: quantity,
+                total: total
+            });
+        }
+
+        updateOrderSummary();
+        updateCartItemsDisplay();
+    }
+
+    function removeFromCart(index) {
+        // Remove the item from the cart array
+        cart.splice(index, 1);
+        updateOrderSummary();
+        updateCartItemsDisplay();
+    }
+
+    function updateOrderSummary() {
+        var orderList = document.getElementById('orderList');
+        var totalPriceElement = document.getElementById('totalPrice');
+        orderList.innerHTML = '';
+
+        var grandTotal = 0;
+
+        cart.forEach(function(item, index) {
+            orderList.innerHTML += '<li>' + item.name + ' (Quantity: ' + item.quantity + ') - <span>₹' + item.total + '</span>' +
+                                   '<button class="remove-button" onclick="removeFromCart(' + index + ')">Remove</button></li>';
+            grandTotal += parseInt(item.total);
+        });
+
+        totalPriceElement.innerHTML = 'Total Price: ₹' + grandTotal;
+    }
+    
+    function updateCartItemsDisplay() {
+        var cartItemsList = document.getElementById('cartItemsList');
+        cartItemsList.innerHTML = '';
+
+        cart.forEach(function(item) {
+            cartItemsList.innerHTML += '<li>' + item.name + ' (Quantity: ' + item.quantity + ')</li>';
+        });
+    }
+
+    function changeQuantity(quantityId, change) {
+        var quantityInput = document.getElementById(quantityId);
+        var currentQuantity = parseInt(quantityInput.value);
+        
+        // Update quantity based on the change value
+        if (currentQuantity + change >= 1) { // Ensure quantity doesn't go below 1
+            quantityInput.value = currentQuantity + change;
+        }
+    }
+</script>
+
+</body>
+</html>

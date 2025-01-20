@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AgroServe - Equipment Rental</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" type="text/css" />
+
+    <style>
+         body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+
+        }
+        .main {
+            width: 85%; /* Increased width of main content */
+            margin: auto;
+            flex: 1;
+        }
+        .header {
+            background: #27ae60;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            animation: fadeIn 1s;
+
+        }
+        .header .logo h1 {
+            margin: 0;
+            font-size: 2.5em;
+
+        }
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar items */
+background: #27ae60;
+}
+
+.navbar a {
+    background-color:#27ae60;
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px; /* Reduced padding */
+    margin: 0 5px; /* Added margin for spacing */
+    border-radius: 5px; /* Optional: add some rounding to buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+    background-color: #2ecc71; /* Change background color on hover */
+}
+
+
+        .content {
+            display: flex;
+            margin: 20px 0;
+        }
+        .mainbar {
+            flex: 80%;
+            padding: 20px;
+        }
+        .sidebar {
+            flex: 30%;
+            padding: 1px;
+            display: flex;
+            flex-direction: column;
+        }
+        .article {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+.image-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .image-section img {
+            width: 32%; /* Adjust width to fit three images side by side */
+            border-radius: 5px;
+        }
+        .equipment-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 40px;
+            background-color: #f9f9f9;
+            transition: transform 0.3s, box-shadow 0.3s;
+
+        }
+        .equipment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .equipment-item img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 5px;
+            margin-right: 20px;
+            transition: transform 0.3s;
+        }
+        .equipment-item:hover img {
+            transform: scale(1.05);
+        }
+        .equipment-details {
+            flex-grow: 1;
+        }
+        .equipment-details h3 {
+            margin: 0 0 10px;
+        }
+        .equipment-details p {
+            margin: 5px 0;
+        }
+        .equipment-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .equipment-buttons button {
+            padding: 8px 16px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .equipment-buttons button:hover {
+            background-color: #27ae60;
+        }
+.main-content {
+            width: 100%; /* Full width */
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #27ae60;
+            color: #ffffff;
+            width: 100%;
+            position: relative;
+            margin-top: auto; /* Ensure footer stays at the bottom */
+        }
+        .footer p {
+            margin: 0;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        function rentEquipment(itemName, pricePerDay) {
+            let quantity = document.getElementById('qty-' + itemName).value;
+            let days = document.getElementById('days-' + itemName).value;
+            let totalCost = pricePerDay * quantity * days;
+            
+            document.getElementById('bill').innerHTML += `
+                <p><strong>Item:</strong> ${itemName} | <strong>Quantity:</strong> ${quantity} | <strong>Days:</strong> ${days} | <strong>Total:</strong> ₹${totalCost}</p>
+            `;
+        }
+    </script>
+</head>
+<body>
+
+<div class="main">
+    <div class="header">
+        <div class="header_resize">
+            <div class="logo">
+                <h1>AgroServe Your Agricultural Partner</h1>
+            </div>
+            <div class="navbar">
+                <a href="home.html">Home</a>
+                <a href="equipment.html">Equipment Rental</a>
+                <a href="labor-services.html">Labor Services</a>
+                <a href="crop-insights.html">Crop Insights</a>
+                <a href="marketinsights.html">Market Trading</a>
+<a href="agrotourism.html">Agro Tour</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="mainbar">
+            <div class="article">
+                <h1><span>Equipment Rental</span></h1>
+                <p>AgroServe offers a wide range of agricultural equipment for rent to support your farming needs.</p>
+ <div class="image-section">
+        <img src="https://wallpapercrafter.com/desktop/107277-farming-farmers-Claas-tractors-heavy-equipment.jpg" alt="Image 1" />
+        <img src="https://img.freepik.com/premium-photo/agricultural-equipment-hd-8k-wallpaper-stock-photographic-image_871881-12037.jpg" alt="Image 2" />
+        <img src="https://tse2.mm.bing.net/th?id=OIP.i67UBEICQditNHCrKgGWtQHaEK&pid=Api&P=0&h=180" alt="Image 3" />
+    </div>
+<br>
+<br>
+
+                <!-- Equipment Items -->
+                <div class="equipment-item">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.jLZLhc_H7FDKzM-3DBn5ZQHaEo&pid=Api&P=0&h=180" alt="Tractor" />
+                    <div class="equipment-details">
+                        <h2>Tractors</h2>
+                        
+                        <p><b>Overview:</b> Tractors are versatile farming vehicles designed to deliver high torque at slow speeds, ideal for pulling heavy loads.
+</p>
+<p><b>Uses:</b></p>
+<p>Tillage: Prepare the soil for planting by plowing, harrowing, and cultivating.</p>
+<p>Planting: Operate seeders and planters for efficient crop planting.</p>
+<p>Transporting: Move farm produce, equipment, and materials.</p>
+<p>Powering Implements: Drive various attachments like plows, harrows, and sprayers.</p>
+                        <div class="equipment-buttons">
+                            <button><a href="file:///C:/extras/Agroserve/tractor.html">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-item">
+                    <img src="https://www.deere.com.au/assets/images/region-4/products/harvesting/tseries-combine-r2C001197-1920x1080.jpg" alt="Harvester" />
+                    <div class="equipment-details">
+                        <h2>Harvester</h2>
+                
+                        <p><b>Overview:</b> Harvesters are machines used for harvesting crops, significantly reducing the time and labor required compared to manual methods.</p>
+<p><b>Uses:</b></p>
+<p>Grain Harvesting: Combine harvesters can cut, thresh, and clean grain in one operation.</p>
+<p>Root Crop Harvesting: Specially designed harvesters for crops like potatoes and carrots.</p>
+<p>Forage Harvesting: Collect and chop forage crops for silage or animal feed.</p>
+                        <div class="equipment-buttons">
+                            <button><a href="file:///C:/extras/Agroserve/harvester.html">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-item">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.Mkggx2NyW17kSaacYK3WHAHaGs&pid=Api&P=0&h=180" alt="Irrigation System" />
+                    <div class="equipment-details">
+                        <h2>Irrigation System</h2>
+                       
+                        <p><b>Overview:</b>Irrigation systems distribute water to crops, ensuring they receive adequate moisture for growth, especially in dry regions.</p>
+<p><b>Uses:</b></p>
+<p>Drip Irrigation: Delivers water directly to the plant roots, minimizing evaporation and runoff.</p>
+<p>Sprinkler Systems: Simulate rainfall by distributing water over crops, suitable for various terrain types.</p>
+<p>Surface Irrigation: Floods fields with water to saturate the soil, often used for paddy cultivation.</p>
+                        <div class="equipment-buttons">
+                            <button><a href="file:///C:/extras/Agroserve/irrigation.html">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-item">
+                    <img src="https://stmaaprodfwsite.blob.core.windows.net/assets/sites/1/2015/04/CP690_1.jpg" alt="Sprayer" />
+                    <div class="equipment-details">
+                        <h2>Cotten and Paddy Related</h2>
+                        
+                        <p>
+<b>Overview: </b>Tools and machinery used in the cultivation and harvesting of cotton and rice (paddy).</p>
+
+<p><b>Uses:</b></p>
+
+<p>Cotton Pickers: Mechanically harvest cotton bolls from plants, reducing labor costs and increasing harvesting efficiency.</p>
+<p>Rice Planters: Automated machines for planting rice seeds in rows, ensuring optimal spacing for healthy growth.</p>
+<p>Transplanters: Move seedlings from nurseries to fields, reducing labor and improving survival rates for rice cultivation.</p>
+<p>Reapers: Cut down ripe paddy and cotton plants, facilitating easier harvesting and minimizing crop loss.</p>
+                        <div class="equipment-buttons">
+                            <button><a href="file:///C:/extras/Agroserve/Cotten%20and%20Paddy.html">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="equipment-item">
+                    <img src="https://img2.exportersindia.com/product_images/bc-full/2022/9/4762576/motorized-arecanut-tree-climber-1663083135-5760493.jpeg" alt="Tiller" />
+                    <div class="equipment-details">
+                        <h2>Areca Nut Related</h2>
+                        
+                        <p><b>Overview: </b>Tools and machinery used in the cultivation, harvesting, and processing of areca nuts.</p>
+
+<p><b>Uses:</b></p>
+
+<p>Areca Nut Harvesters: Mechanized equipment designed to efficiently harvest ripe areca nuts from palm trees, reducing manual labor and increasing harvesting speed.</p>
+<p>Dehusking Machines: Machines that remove the outer husk from harvested areca nuts, streamlining the processing stage and improving product quality.</p>
+<p>Dryers: Equipment used to dry harvested areca nuts, essential for preserving their quality and preventing spoilage.</p>
+<p>Grading Machines: Tools that sort and classify areca nuts based on size and quality, ensuring uniformity and better marketability.</p>
+                        <div class="equipment-buttons">
+                            <button><a href="file:///C:/extras/Agroserve/ArecaNut.html">Book Now</a></button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 AgroServe. All Rights Reserved.</p>
+    <p>Follow us on <a href="agro_serve">Facebook</a>, <a href="agro_serve">Twitter</a>, and <a href="agro_serve">Instagram</a>.</p>
+</div>
+
+</body>
+</html>
